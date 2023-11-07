@@ -97,6 +97,8 @@ body {
   text-align: left;
   padding: 0;
   margin-left: 10px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Style the navigation bar */
@@ -260,7 +262,7 @@ body {
   padding: 3rem;
   /* Increased padding for smaller screens */
   height: auto;
-  position: relative;
+  /* position: relative; */
   top: 0;
   right: 0;
   transform: none;
@@ -359,6 +361,15 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
 /* DETAILS PAGE */
 
 .itinerary-list {
@@ -379,13 +390,7 @@ body {
   margin: 0;
 }
 
-.delete-button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
+
 
 .confirmation-modal {
   border: 1px solid #ccc;
@@ -406,17 +411,53 @@ body {
 
 /* DETAIL PAGE ENDS */
 
-/* SAVED LIST START */
+
+
+
+
+
+
+
+
+
 
 .save-list-button {
   background-color: orange;
   color: white;
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
   font-size: 18px;
   border-radius: 10px;
-  margin-top: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center; 
+  margin-left: 35%;
+  top:4rem;
+}
+
+@media (max-width: 768px) {
+  .save-list-button {
+    justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  }
+}
+
+a.link-to-saved-list{
+  margin:auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+ 
+}
+
+button.save-list-button{
+  margin: auto;
+  display: flex-end;
+
+
 }
 
 .save-list-button:hover {
@@ -424,71 +465,26 @@ body {
   color: white;
 }
 
+/* Center the .link-to-saved-list */
 .link-to-saved-list {
-  margin-top: 20px;
   text-decoration: none;
   color: #61dafb;
   font-weight: bold;
   font-size: 16px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center; 
+  
 }
 
 .link-to-saved-list:hover {
   text-decoration: underline;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.list-container {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.custom-name-input {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.list-item {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.delete-button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.empty-itinerary {
-  text-align: center;
-  margin-top: 20px;
-  color: white;
-}
-
-.current-date-time {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-/* Additional styles for your buttons or other elements can be added here. */
 
 
 
-/* SAVED LIST ENDS */
 
 
 /* LIST PAGE CSS STARTS  */
@@ -509,12 +505,19 @@ body {
   font-weight: bold;
   font-size: 35px;
   color: white;
-  margin-top: 9rem;
+  margin-top: 7rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
   .list-title {
     font-size: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
   }
 }
 
@@ -528,14 +531,14 @@ body {
   font-size: 18px;
   border-radius: 10px;
   position: absolute;
-  top: 150px;
+  top: 100px;
   left: 20px;
 }
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .go-back-button-on-list {
-    padding: 8px 16px;
+    /* padding: 8px 16px; */
     font-size: 16px;
     top: 50px;
     /* Adjust the top margin for smaller screens */
@@ -553,18 +556,23 @@ body {
 
 /* Default styles for the search box */
 .search-box-on-list {
-  display: flex;
-  align-items: center;
   max-width: 400px;
   margin: 0 auto;
+  display:flex;
+  align-items: center;
+  justify-content: center;
   /* Add other styles as needed */
 }
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .search-box-on-list {
-    max-width: 100%;
-    padding: 0 20px;
+    max-width: 100vh;
+    /* padding: 0 20px; */
+    display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5rem;
     /* Add padding to adjust spacing as needed */
   }
 
@@ -602,27 +610,30 @@ body {
 .table-list {
   width: 90%;
   color: white;
-  margin-left: 40px;
+  margin-bottom: 15rem; /* Center horizontally */
   margin-top: 20px;
-  align-items: center;
+  text-align: center; /* Center the text within the element */
 }
+
 
 @media (max-width: 768px) {
   .table-list {
-    margin: auto;
+    margin-bottom:20rem;
+    width: 90%;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+  
   }
 }
 
-.place-name {
-  text-align: center;
-  /* padding-left: 20px; */
+.place-name-on-list,
+.place-action {
+  text-align: center; /* Center the text within the elements */
   font-size: 20px;
+  max-width: 100%; /* Ensure responsiveness */
 }
 
-.place-action {
-  text-align: center;
-  font-size: 20px;
-}
 
 .list-td {
   padding: 5px;
@@ -685,6 +696,13 @@ body {
 /* 
 LIST PAGE ENDS */
 
+
+
+
+
+
+
+
 /* SAVED LIST PAGE STARTS*/
 /* saved.css */
 
@@ -695,18 +713,15 @@ LIST PAGE ENDS */
   background-color: #001732;
 }
 
-.title {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-}
 
 .list-container {
   border: 1px solid rgba(148, 185, 217, 0.8);
   padding: 20px;
   margin-bottom: 10px;
-  background-color: #f9f9f9;
+ color: white;
   border-radius: 5px;
+  background-color:rgba(148, 185, 217, 0.8)
+
 }
 
 .custom-name-input {
@@ -715,6 +730,7 @@ LIST PAGE ENDS */
   margin-bottom: 5px;
   border: 1px solid rgba(148, 185, 217, 0.8);
   border-radius: 3px;
+ 
 }
 
 
@@ -723,17 +739,19 @@ LIST PAGE ENDS */
   margin: 5px 0;
 }
 
-.delete-button {
+.delete-place-button {
   background-color: #e76f51;
   color: white;
   border: none;
   border-radius: 3px;
-  padding: 8px 16px;
+  padding: 8px 10px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-left: 40rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.delete-button:hover {
+.delete-place-button:hover {
   background-color: #d3391e;
 }
 
@@ -752,19 +770,11 @@ LIST PAGE ENDS */
   color: #666;
 }
 
-.custom-name-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  color: black;
-}
 
-.list-titl-on-saved {
-  font-size: 10px;
+.list-title-on-saved {
+  font-size: 35px;
   margin-bottom: 10px;
-  color: #000;
+  color: white;
   /* Set a specific text color, like black (#000) */
 }
 
@@ -773,14 +783,14 @@ LIST PAGE ENDS */
   background-color: orange;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 18px;
   border-radius: 10px;
-  position: absolute;
-  top: 150px;
-  left: 20px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
+
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
@@ -814,38 +824,33 @@ LIST PAGE ENDS */
 .place-search-page {
   background-color: #001732;
   color: white;
-  /* Text color is set to white for better visibility on a dark background */
   font-family: Arial, sans-serif;
-  /* Change the font family as needed */
   padding: 20px;
-
 }
 
-/* Styles for the "Go back" button */
 .go-back-button-on-list {
   background-color: orange;
-  /* Button background color */
   color: white;
-  /* Text color of the button */
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px 15px;
   cursor: pointer;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
-/* Title styles */
 .search-title {
   font-size: 26px;
-  margin: 20px 30rem;
+  margin: 20px auto; /* Center title horizontally */
+  text-align: center; /* Center title text */
 }
 
-/* Styles for category buttons */
 .category-selection {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 20rem;
+  justify-content: center; /* Center category buttons horizontally */
+  margin: 10px auto; /* Center category buttons horizontally */
 }
 
 .category-button {
@@ -870,28 +875,27 @@ LIST PAGE ENDS */
   border-radius: 5px;
 }
 
-/* Input styles */
 .input {
   width: 60%;
   padding: 10px;
-  margin: 10px 9rem;
   border: none;
   border-radius: 5px;
   font-size: 16px;
-
+  margin: 10px auto; /* Center input horizontally */
+  display: block;
 }
-.input-on-search{
-  margin-left:15rem;
-  width: 50%;
+
+.input-on-search {
+  width: 80%; /* Adjust the width to fit the container */
   padding: 10px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
-
+  margin: 0 auto; /* Center input horizontally */
+  display: block;
 }
 
-/* Search button styles */
 .search-button {
   background-color: orange;
   color: white;
@@ -900,68 +904,65 @@ LIST PAGE ENDS */
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
-  margin-bottom: 20px;
-  margin-left: 3rem;
+  margin: 10px auto; /* Center button horizontally */
+  display: block;
 }
 
 .search-button:hover {
   background-color: #e76f51;
-  /* Sunset orange on hover */
   color: white;
 }
 
-
-/* Styles for the selected categories section */
 .selected-categories {
   font-size: 16px;
   margin-bottom: 20px;
+  text-align: center; /* Center text horizontally */
 }
 
 .place-results-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Center place results horizontally */
 }
 
 .place-result {
-  width: calc(33.33% - 20px); /* 20px accounts for margin */
+  width: calc(33.33% - 20px);
   margin: 10px;
   padding: 10px;
   background-color: white;
-  border: 1px solid #000; /* Border style */
+  border: 1px solid #000;
+  text-align: center; /* Center text horizontally */
 }
 
 .place-info {
   padding: 10px;
-  color:black;
+  color: black;
 }
 
-/* Adjust the image size to fit the container */
 .place-result img {
-  width: 100%;
-  height: 15rem;
-  /* Maintain image aspect ratio */
+  max-width: 100%; /* Ensure images don't overflow their container */
+  height: auto; /* Maintain image aspect ratio */
   border-radius: 5px;
 }
 
 .place-name {
   font-size: 16px;
-  width: 20rem;
-
+  width: 100%; /* Full width on smaller screens */
+  text-align: center; /* Center text horizontally */
 }
 
 .go-back-button-on-placesearch {
   background-color: orange;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 18px;
   border-radius: 10px;
-  position: absolute;
-  top: 105px;
-  left: 20px;
+  margin-top: 90px;
+  margin-left: 25px;
 }
+
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
@@ -980,5 +981,43 @@ LIST PAGE ENDS */
   background-color: #e76f51;
   /* Sunset orange on hover */
   color: white;
+}
+
+
+/* Adjustments for small mobile screens */
+@media screen and (max-width: 480px) {
+  .search-title {
+    font-size: 20px;
+    margin: 10px auto; /* Adjust margins for smaller screens */
+  }
+
+  .category-selection {
+    justify-content: center;
+    margin: 10px auto;
+  }
+
+  .category-button,
+  .selected-category {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .input,
+  .input-on-search {
+    width: 90%;
+    margin: 5px auto;
+  }
+
+  .search-button {
+    margin: 10px auto;
+  }
+
+  .place-result {
+    width: calc(50% - 10px); /* Two columns for small screens */
+  }
+
+  .place-name {
+    font-size: 14px;
+  }
 }
 

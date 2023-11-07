@@ -21,6 +21,7 @@ function NavBar() {
         <li><Link to="/List">Build your itinerary</Link></li>
         <li><Link to="/Geolocation">Explore Hotels</Link></li>
         <li><Link to="/Placesearch">Things to do</Link></li>
+        <li><Link to="/Saved-lists">Favorites</Link></li>
         {/* Add other navigation links */}
       </ul>
     </nav>

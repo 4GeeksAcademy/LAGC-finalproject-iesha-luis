@@ -50,6 +50,7 @@ function Landingpage() {
         <li><a href="/List">Build an Itinerary</a></li>
         <li><a href="/Geolocation">Explore Hotels</a></li>
         <li><a href="/Placesearch">Things to do</a></li>
+        <li><a href="/Saved-lists">Favorites</a></li>
         <li><div className='signout' onClick={() => auth.signOut()}>Sign out</div></li>
       </ul>
       <div className='blue-block'>
@@ -94,7 +95,7 @@ function Landingpage() {
                 const email = error.customData.email;
                 const credential = GoogleAuthProvider.credentialFromError(error);
               });
-            }}>Sign In</button>
+            }}>Sign Up</button>
           </div>
             
         </div>

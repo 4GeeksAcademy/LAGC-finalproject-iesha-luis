@@ -126,7 +126,7 @@ export default function ListPage() {
         <table className="table-list">
           <thead>
             <tr>
-              <th className="place-name">Place Name</th>
+              <th className="place-name-on-list">Place Name</th>
               <th className="place-action">Date & Time</th>
               <th className="place-action">Action</th>
             </tr>

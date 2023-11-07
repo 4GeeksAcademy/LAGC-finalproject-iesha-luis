@@ -11,14 +11,15 @@ import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
 // import Footer from "./component/Footer";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBkZdDeKGgnKXzAu-RWrDGQAQBG-x3D334",
-  authDomain: "music-player-final-project.firebaseapp.com",
-  projectId: "music-player-final-project",
-  storageBucket: "music-player-final-project.appspot.com",
-  messagingSenderId: "226920662966",
-  appId: "1:226920662966:web:b556085bc0ad517f436317",
-  measurementId: "G-VJ2MW5G87J"
+  apiKey: "AIzaSyDJSMD3b_gldBtrYAZDPzgsuxghtjKGjPA",
+  authDomain: "voyage-hawk.firebaseapp.com",
+  projectId: "voyage-hawk",
+  storageBucket: "voyage-hawk.appspot.com",
+  messagingSenderId: "1024774339212",
+  appId: "1:1024774339212:web:9a7fcfc5da537d974699a9",
+  measurementId: "G-R9MJG8PNCK"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const functions = getFunctions(app);

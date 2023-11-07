@@ -89,7 +89,7 @@ export default function CityToLatLngConverter() {
               onChange={handleCityChange}
             />
 
-            <button className="search-places" onClick={getLatLng}>
+            <button className="search-places2" onClick={getLatLng}>
               Search Places
             </button>
           </div>
