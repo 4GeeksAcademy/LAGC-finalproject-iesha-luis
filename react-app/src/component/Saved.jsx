@@ -63,8 +63,7 @@
 //   );
 // }
 
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
@@ -72,7 +71,10 @@ export default function Saved() {
   const [savedLists, setSavedLists] = useState(
     JSON.parse(localStorage.getItem('savedLists')) || []
   );
-  const [customTitles, setCustomTitles] = useState(savedLists.map(() => '')); // Initialize with empty titles
+  const [customTitles, setCustomTitles] = useState(() => {
+    const storedTitles = JSON.parse(localStorage.getItem('customTitles')) || {};
+    return savedLists.map((list, index) => storedTitles[index] || '');
+  });
   const navigate = useNavigate();
 
   const handleDeletePlace = (listIndex, placeIndex) => {
@@ -86,6 +88,7 @@ export default function Saved() {
     setCustomTitles((prevTitles) => {
       const newTitles = [...prevTitles];
       newTitles[index] = newTitle;
+      localStorage.setItem('customTitles', JSON.stringify(newTitles));
       return newTitles;
     });
   };
@@ -114,6 +117,13 @@ export default function Saved() {
     let path = `/explore`; // Adjust the path as needed
     navigate(path);
   };
+
+  // Save changes to custom titles when the component unmounts
+  useEffect(() => {
+    return () => {
+      localStorage.setItem('customTitles', JSON.stringify(customTitles));
+    };
+  }, [customTitles]);
 
   return (
     <div className="container">
@@ -166,4 +176,3 @@ export default function Saved() {
     </div>
   );
 }
-

@@ -433,7 +433,7 @@ body {
   align-items: center;
   text-align: center; 
   margin-left: 35%;
-  top:4rem;
+  top:15px;
 }
 
 @media (max-width: 768px) {
@@ -493,12 +493,13 @@ button.save-list-button{
   
   background-color: #001732;
   min-height: 100vh;
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #333333;
   /* z-index: 1; */
+  max-height: 100vh; /* Set the maximum height of the container */
+  overflow-y: auto;
 }
 
 .list-title {
@@ -610,7 +611,7 @@ button.save-list-button{
 .table-list {
   width: 90%;
   color: white;
-  margin-bottom: 15rem; /* Center horizontally */
+  margin-bottom: 10rem; /* Center horizontally */
   margin-top: 20px;
   text-align: center; /* Center the text within the element */
 }
@@ -678,10 +679,19 @@ button.save-list-button{
   color: white;
 }
 
+.buttons-container {
+  display: flex;
+  gap: 5px; /* Adjust the gap between buttons as needed */
+}
+
+.save-list-button,
+.link-to-saved-list {
+  padding: 10px;
+}
 .link-to-saved-list {
   color: #61dafb;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 16px;
 }
 
@@ -713,15 +723,23 @@ LIST PAGE ENDS */
   background-color: #001732;
 }
 
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
 .list-container {
   border: 1px solid rgba(148, 185, 217, 0.8);
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 20px; 
+  margin-bottom: 10px; 
  color: white;
   border-radius: 5px;
-  background-color:rgba(148, 185, 217, 0.8)
-
+  background-color:rgba(148, 185, 217, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+ 
 }
 
 .custom-name-input {
@@ -735,8 +753,12 @@ LIST PAGE ENDS */
 
 
 .list-item {
-  font-size: 16px;
-  margin: 5px 0;
+  font-size: 20px;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
 }
 
 .delete-place-button {
@@ -744,11 +766,12 @@ LIST PAGE ENDS */
   color: white;
   border: none;
   border-radius: 3px;
-  padding: 8px 10px;
+  padding: 5px 10px;
   cursor: pointer;
-  margin-left: 40rem;
+  margin-left: 35rem;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .delete-place-button:hover {
@@ -758,6 +781,7 @@ LIST PAGE ENDS */
 .empty-itinerary {
   text-align: center;
   margin-top: 20px;
+  color:white;
 }
 
 .empty-itinerary h2 {
@@ -784,12 +808,15 @@ LIST PAGE ENDS */
   color: white;
   border: none;
   padding: 10px 15px;
-  cursor: pointer;
+  
   font-size: 18px;
   border-radius: 10px;
-  margin-top: 15px;
-  margin-left: 10px;
-}
+ 
+  margin-right: 50px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  }
+
 
 
 /* Responsive styles for smaller screens */
@@ -1020,4 +1047,32 @@ LIST PAGE ENDS */
     font-size: 14px;
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: orange;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: orange;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
 

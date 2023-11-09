@@ -325,10 +325,15 @@ export default function PlaceSearch() {
   const [locationInput, setLocationInput] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [placesResults, setPlacesResults] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize] = useState(5); // Adjust the number of results per page
   const navigate = useNavigate();
 
+  useEffect(() => {
+    loadGoogleMapsAPI();
+  }, []);
+
   const loadGoogleMapsAPI = () => {
-    // Replace 'YOUR_API_KEY' with your Google Places API key.
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_PLACES_API_KEY;
 
     if (!googleMapsApiKey) {
@@ -342,10 +347,6 @@ export default function PlaceSearch() {
     script.onload = searchPlaces;
     document.head.appendChild(script);
   };
-
-  useEffect(() => {
-    loadGoogleMapsAPI();
-  }, []);
 
   const handleCategorySelect = (category) => {
     if (selectedCategories.includes(category)) {
@@ -382,6 +383,7 @@ export default function PlaceSearch() {
         service.nearbySearch(request, (placesResults, placesStatus) => {
           if (placesStatus === window.google.maps.places.PlacesServiceStatus.OK) {
             setPlacesResults(placesResults);
+            setCurrentPage(1); // Reset to the first page when new results are retrieved
           } else {
             console.error('Error searching for places:', placesStatus);
           }
@@ -392,19 +394,22 @@ export default function PlaceSearch() {
     });
   };
 
-  const addToSavedList = (place) => {
-    // Retrieve the saved list from localStorage or initialize an empty array.
-    const savedLists = JSON.parse(localStorage.getItem('savedLists')) || [];
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
 
-    // Create a new itinerary with the selected place and add it to the saved list.
+  const totalPages = Math.ceil(placesResults.length / pageSize);
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const currentResults = placesResults.slice(startIndex, endIndex);
+
+  const addToSavedList = (place) => {
+    const savedLists = JSON.parse(localStorage.getItem('savedLists')) || [];
     const newItinerary = {
-      location: 'Custom Location Name', // Provide a location name or customize as needed.
+      location: 'Custom Location Name',
       places: [place],
     };
-
     savedLists.push(newItinerary);
-
-    // Update the saved list in localStorage.
     localStorage.setItem('savedLists', JSON.stringify(savedLists));
   };
 
@@ -465,10 +470,10 @@ export default function PlaceSearch() {
       </div>
 
       <div className="place-results-container">
-        {Array.isArray(placesResults) && placesResults.map((place, index) => (
+        {Array.isArray(currentResults) && currentResults.map((place, index) => (
           <div className="place-result" key={index}>
             <div className="place-info">
-              <h2 className='place-name'><b>Name: {place.name}</b></h2>
+              <h2 className="place-name"><b>Name: {place.name}</b></h2>
               {place.photos && place.photos.length > 0 && (
                 <img src={place.photos[0].getUrl()} alt="Place" />
               )}
@@ -489,6 +494,25 @@ export default function PlaceSearch() {
           </div>
         ))}
       </div>
+
+      {/* Pagination controls */}
+      {totalPages > 1 && (
+        <div className="pagination">
+          <button
+            disabled={currentPage === 1}
+            onClick={() => handlePageChange(currentPage - 1)}
+          >
+            Previous
+          </button>
+          <span>{`Page ${currentPage} of ${totalPages}`}</span>
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => handlePageChange(currentPage + 1)}
+          >
+            Next
+          </button>
+        </div>
+      )}
     </div>
   );
 }

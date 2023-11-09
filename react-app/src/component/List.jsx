@@ -159,16 +159,15 @@ export default function ListPage() {
           </tbody>
         </table>
       </div>
-      {/* Save List button */}
-      <button className="save-list-button" onClick={handleSaveList}>
-        Save List
-      </button>
-      {/* Link to Saved component */}
-      <Link to="/saved-lists" className="link-to-saved-list">
-        Go to Saved List
-      </Link>
-      {/* <Map places={selectedPlaces} /> */}
-    </div>
+      <div className="buttons-container">
+  <button className="save-list-button" onClick={handleSaveList}>
+    Save List
+  </button>
+  <Link to="/saved-lists" className="link-to-saved-list">
+    Go to Saved List
+  </Link>
+  </div>
+</div>
   );
 }
 
