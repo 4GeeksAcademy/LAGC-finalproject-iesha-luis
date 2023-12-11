@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "geeks-firebase-72e6d"
-  }
+    "default": "voyage-hawk",
+    "voyage-hawk": "voyage-hawk"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -1,67 +1,4 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import '../App.css';
-// import Map from './Map';
 
-// export default function Saved() {
-//   const [savedLists, setSavedLists] = useState(JSON.parse(localStorage.getItem('savedLists')) || []);
-//   const [customNames, setCustomNames] = useState(savedLists.map(() => '')); // Initialize with empty names
-
-//   const navigate = useNavigate();
-
-//   const handleDelete = (index) => {
-//     const newItinerary = [...savedLists];
-//     newItinerary.splice(index, 1);
-//     setSavedLists(newItinerary);
-//     setCustomNames((prevNames) => prevNames.filter((_, i) => i !== index));
-//     localStorage.setItem('savedLists', JSON.stringify(newItinerary));
-//   };
-
-//   const handleCustomNameChange = (index, newName) => {
-//     setCustomNames((prevNames) => {
-//       const newNames = [...prevNames];
-//       newNames[index] = newName;
-//       return newNames;
-//     });
-//   };
-
-//   const goBack = () => {
-//     let path = `/explore`; // Adjust the path as needed
-//     navigate(path);
-//   };
-
-//   return (
-//     <div className="container">
-//       <div className="w3-col m4 l3">
-//         <h1 className="title">Saved Itineraries</h1>
-//         <div className="Go-back-button-on-saved" onClick={goBack}>
-//           &larr; Go back
-//         </div>
-//         {savedLists.length > 0 ? (
-//           savedLists.map((list, index) => (
-//             <div key={index} className="list-container">
-//               <h2 className="list-title-on-saved">{customNames[index] || list.location}</h2>
-//               {list.places.map((place, placeIndex) => (
-//                 <p key={placeIndex} className="list-item">
-//                   {place.name}
-//                 </p>
-//               ))}
-//               <button className="delete-button" onClick={() => handleDelete(index)}>
-//                 Delete List
-//               </button>
-//               <Map places={list.places} />
-//             </div>
-//           ))
-//         ) : (
-//           <div className="empty-itinerary">
-//             <h2>My Itinerary</h2>
-//             <p>No items in the itinerary yet.</p>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -126,12 +63,13 @@ export default function Saved() {
   }, [customTitles]);
 
   return (
-    <div className="container">
-      <div className="w3-col m4 l3">
-        <h1 className="title">Saved Itineraries</h1>
+    <div className='whole-container'>
         <div className="Go-back-button-on-saved" onClick={goBack}>
           &larr; Go back
         </div>
+    <div className="container">
+      <div className="w3-col m4 l3">
+        <h1 className="title">Saved Itineraries</h1>
         {Object.keys(groupedPlaces).length > 0 ? (
           Object.keys(groupedPlaces).map((area, index) => (
             <div key={index}>
@@ -173,6 +111,7 @@ export default function Saved() {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }

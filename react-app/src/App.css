@@ -38,8 +38,6 @@
   }
 }
 
-
-/* Styles for .explorepagediv */
 body {
   background-color: #001732;
 }
@@ -54,13 +52,12 @@ body {
   height: 100vh; 
 }
 
-/* Create a scrollable container for the content */
 .scrollable-content {
   /* overflow-y: auto;  */
-  max-height: 80vh; /* Set a max height to allow for scrolling */
+  max-height: 80vh; 
 }
 
-/* Responsive styles for smaller screens */
+
 @media (max-width: 768px) {
   .explorepagediv {
     padding: 20px; /* Adjust padding for smaller screens */
@@ -68,10 +65,6 @@ body {
   }
 }
 
-
-.title {
-  font: bold;
-}
 
 .header {
   display: flex;
@@ -91,7 +84,6 @@ body {
 
 .search-city {
   background-color: orange;
-  /* Use the orange color for buttons */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -103,13 +95,11 @@ body {
 
 .search-city:hover {
   background-color: #e76f51;
-  /* Sunset orange on hover */
   color: white;
 }
 
 .search-build {
   background-color: orange;
-  /* Use the orange color for buttons */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -121,7 +111,6 @@ body {
 
 .search-build:hover {
   background-color: #e76f51;
-  /* Sunset orange on hover */
   color: white;
 }
 
@@ -172,7 +161,6 @@ body {
 
       .search-places {
         background-color: orange;
-        /* Use the orange color for buttons */
         color: white;
         border: none;
         padding: 10px 20px;
@@ -184,11 +172,9 @@ body {
       
       .search-places:hover {
         background-color: #e76f51;
-        /* Sunset orange on hover */
         color: white;
       }
 
-/* Default styles for the "Go back" button in explore */
 .Go-back-buttons-on-explore {
   background-color: orange;
   color: white;
@@ -208,8 +194,8 @@ body {
   .Go-back-buttons-on-explore {
     padding: 8px 16px;
     font-size: 16px;
-    top: 50px; /* Adjust the top margin for smaller screens */
-    left: 10px; /* Adjust the left margin for smaller screens */
+    top: 50px; 
+    left: 10px; 
     
   }
 }
@@ -218,7 +204,6 @@ body {
 
 .Go-back-buttons-on-explore:hover {
   background-color: #e76f51;
-/* Sunset orange on hover */
 color: white;
 }
 
@@ -251,7 +236,6 @@ color: white;
   color:white;
 }
 
-/* Apply your styles to the .add-to-list-button class */
 .add-to-list-button {
   background-color: orange;
   color: white;
@@ -263,6 +247,6 @@ color: white;
 }
 
 .add-to-list-button:hover {
-  background-color: #e76f51; /* Change color on hover */
+  background-color: #e76f51; 
   color: white;
 }

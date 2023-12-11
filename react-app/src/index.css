@@ -6,13 +6,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Set the background image and styles for the landing page */
 .landingpage {
   background-image: url("https://4kwallpapers.com/images/wallpapers/coastline-aerial-view-above-clouds-seascape-mountains-macos-5120x2880-3995.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin: 0;
+  margin: auto;
   padding: 0;
   height: 100vh;
   max-width: 100%;
@@ -20,7 +19,8 @@ body {
   flex-direction: column;
 }
 
-/* Style the sign-in button */
+
+
 .signin {
   background-color: orange;
   color: black;
@@ -43,12 +43,48 @@ body {
   }
 }
 
-/* Position the app relative to its container */
 .app {
   position: relative;
 }
+.slogans{
+  justify-content: center;
+  align-items: center;
+  
+}
 
-/* Style the slogans and generated country */
+@media (max-width: 768px) {
+  .slogans{
+    justify-content: center;
+    align-items: center;
+    
+  }
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+
+ .main-title2 { 
+  font-size: 25px;
+  position: absolute;
+  top: 1%;
+  left: 45%;
+  font: bold;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 15rem; */
+  color:white;
+ 
+} 
+
+ 
+
+
 .sloganss {
   color: white;
   font-size: 1rem;
@@ -71,150 +107,142 @@ body {
   animation: colorChange 6s infinite alternate;
   font-size: 5rem;
   color: transparent;
-  /* margin: 1rem; */
+  
   height: 7rem;
-  /* Set a fixed height for the container */
   overflow: hidden;
-  /* Hide overflow if the text exceeds the container's height */
+ 
   display: inline-block;
-  /* Display as inline-block to prevent line breaks */
+  
   white-space: nowrap;
-  /* Prevent text from wrapping */
+
 }
 
-/* Keyframe animation for generated country text color change */
 @keyframes colorChange {
   to {
     color: orange;
   }
 }
 
-
-/* Style the title */
-.title {
-  color: white;
-  font-size: 25px;
-  text-align: left;
-  padding: 0;
-  margin-left: 10px;
-  text-align: center;
-  margin-bottom: 20px;
+p.slogan{
+  margin:auto;
 }
 
-/* Style the navigation bar */
+
+
+
+
 .nav {
   background-color: rgb(0, 35, 63);
   height: 2px;
 }
 
+em{
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  em{
+    margin: auto;
+  }
+  }
 .nav-tabs {
   border: none;
+ 
 }
 
-/* Style the sign-in/login buttons */
-.signin-login-buttons {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  margin-left: 1rem;
-  /* Reduced left margin for smaller screens */
+.hawk{
+  color:orange;
 }
 
-.login-button {
+
+
+button.login-button {
   background-color: orange;
   color: black;
   height: 3rem;
-  min-width: 8rem;
-  /* Use min-width to ensure the button adapts to content */
+  min-width: 15rem;
+
   border-radius: 10px;
   border: black 1px solid;
   font-size: 1.5rem;
-  margin-right: 1rem;
-  /* Reduced right margin for smaller screens */
-  width: 8rem;
-
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 10rem;
+  margin-left:1.5rem;
 
 }
 
+
+
 /* Adjust styles for smaller screens (e.g., mobile devices) */
 @media (max-width: 768px) {
-  .signin-login-buttons {
-    margin-left: 0.5rem;
-    /* Further reduced left margin */
+  .landingpage {
+    background-size: auto; /* Adjust background size for better visibility */
+  }
+
+  .main-title2 {
+    left: 35%;
 
   }
+
+  .hamburger-icon {
+    margin-left: 0;
+  }
+
+
+
 
   .login-button {
     height: 3rem;
     min-width: 7rem;
     font-size: 1.2rem;
     margin-right: 0.5rem;
-    /* Further reduced right margin */
+    
   }
 }
 
-/* Adjust styles for even smaller screens (e.g., very narrow mobile devices) */
-@media (max-width: 480px) {
-  .signin-login-buttons {
-    margin-left: 0.2rem;
-    /* Further reduced left margin */
-  }
-
-
+.sloganss {
+  font-size: 15px; /* Adjust font size for better visibility */
+  margin-left: 0; /* Adjust margin for better spacing */
 }
-
-
-/* Style the Hawk text with orange color */
-.hawk {
-  color: orange;
-  padding: 0;
-}
-
 
 .login-button a {
   text-decoration: none;
   color: black;
 }
 
-/* .login-button .whitebox {
-  text-decoration: none;
-  color: black;
-} */
 
 .login-button a:hover {
   text-decoration: none;
   color: white;
 }
 
-/* Hamburger menu icon styles */
 .hamburger-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
+  top:0.2rem;
+  margin-right: 15px;
   cursor: pointer;
-  background-color: transparent;
-  padding: 10px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: relative; /* Ensure it's positioned relative to its containing element */
   z-index: 2;
+  align-items: flex-end; 
+  margin-left:40rem;
 }
 
+
 .bar {
-  width: 30px;
+  
+  background-color: #fff;
   height: 3px;
-  background-color: white;
-  margin: 3px 0;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  transform-origin: right;
+  width: 25px;
+  margin: 6px 0;
+  transition: 0.4s;
 }
 
 .hamburger-icon:hover .bar {
   background-color: orange;
 }
 
-/* Initially, hide the nav-list off-screen to the right */
+
 .nav-list {
   list-style: none;
   padding: 0;
@@ -222,19 +250,31 @@ body {
   position: absolute;
   top: 0;
   right: -25%;
-  /* Start off-screen to the right */
   width: 25%;
   height: 100vh;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease;
-  /* Slide in from the right transition */
 }
 
-/* Adjust the active state to bring the nav-list on screen */
 .nav-list.active {
+  background-color: rgba(255, 255, 255, 0.8);
   right: 0;
-  /* Slide in from the right to cover the screen */
+  transform: translateX(0);
+}
+
+
+/* Styles for the active state */
+.hamburger-icon.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 .nav-list a {
@@ -246,11 +286,12 @@ body {
   padding: 10px;
   border-bottom: 1px solid orange;
 }
+
 .nav-list li:hover {
   background-color: orange;
 }
 
-/* Add the blue block style */
+
 .blue-block {
   background-color: rgba(0, 35, 63, 0.8);
   width: 100%;
@@ -260,32 +301,27 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 3rem;
-  /* Increased padding for smaller screens */
   height: auto;
-  /* position: relative; */
   top: 0;
   right: 0;
   transform: none;
   transition: transform 0.3s ease;
 }
-
 /* Tablet styles (for screens wider than 768px) */
-@media (min-width: 768px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .blue-block {
-    padding: 5rem;
-    height: 35rem;
-
+    padding: 4rem; /* Adjust padding for better spacing */
   }
 }
 
 /* Desktop styles (for screens wider than 1024px) */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .blue-block {
-    width: 35%;
+    width: 35%; /* Adjust width for better layout */
+    padding: 5rem; /* Adjust padding for better spacing */
   }
 }
 
-/* LANDING PAGE STYLE ENDS */
 
 .exploredetail {
   background-color: white;
@@ -297,11 +333,8 @@ body {
   width: 300px;
 }
 
-/* #map {
-  width: 100%;
-  height: 700px;
-  /* margin-top: 2px; */
-*/ .loading-container {
+
+.loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,7 +352,6 @@ body {
 
 
 
-/* App.css or your custom CSS file */
 .map-container {
   position: relative;
   width: 100%;
@@ -358,16 +390,6 @@ body {
   background-color: #e76f51;
   color: white;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /* DETAILS PAGE */
@@ -414,13 +436,6 @@ body {
 
 
 
-
-
-
-
-
-
-
 .save-list-button {
   background-color: orange;
   color: white;
@@ -431,29 +446,29 @@ body {
   justify-content: center;
   display: flex;
   align-items: center;
-  text-align: center; 
+  text-align: center;
   margin-left: 35%;
-  top:15px;
+  top: 15px;
 }
 
 @media (max-width: 768px) {
   .save-list-button {
     justify-content: center;
-  display: flex;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
 }
 
-a.link-to-saved-list{
-  margin:auto;
+a.link-to-saved-list {
+  margin: auto;
   justify-content: center;
   display: flex;
   align-items: center;
- 
+
 }
 
-button.save-list-button{
+button.save-list-button {
   margin: auto;
   display: flex-end;
 
@@ -465,7 +480,7 @@ button.save-list-button{
   color: white;
 }
 
-/* Center the .link-to-saved-list */
+
 .link-to-saved-list {
   text-decoration: none;
   color: #61dafb;
@@ -474,8 +489,8 @@ button.save-list-button{
   justify-content: center;
   display: flex;
   align-items: center;
-  text-align: center; 
-  
+  text-align: center;
+
 }
 
 .link-to-saved-list:hover {
@@ -490,7 +505,7 @@ button.save-list-button{
 /* LIST PAGE CSS STARTS  */
 
 .list-page {
-  
+
   background-color: #001732;
   min-height: 100vh;
   flex-direction: column;
@@ -498,7 +513,7 @@ button.save-list-button{
   justify-content: center;
   color: #333333;
   /* z-index: 1; */
-  max-height: 100vh; /* Set the maximum height of the container */
+  max-height: 100vh;
   overflow-y: auto;
 }
 
@@ -522,7 +537,6 @@ button.save-list-button{
   }
 }
 
-/* Default styles for the "Go back" button */
 .go-back-button-on-list {
   background-color: orange;
   color: white;
@@ -539,30 +553,27 @@ button.save-list-button{
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .go-back-button-on-list {
-    /* padding: 8px 16px; */
     font-size: 16px;
     top: 50px;
-    /* Adjust the top margin for smaller screens */
     left: 10px;
-    /* Adjust the left margin for smaller screens */
+  
   }
 }
 
 
 .go-back-button-on-list:hover {
   background-color: #e76f51;
-  /* Sunset orange on hover */
   color: white;
 }
 
-/* Default styles for the search box */
+
 .search-box-on-list {
   max-width: 400px;
   margin: 0 auto;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  /* Add other styles as needed */
+
 }
 
 /* Responsive styles for smaller screens */
@@ -570,14 +581,12 @@ button.save-list-button{
   .search-box-on-list {
     max-width: 100vh;
     /* padding: 0 20px; */
-    display:flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 5rem;
-    /* Add padding to adjust spacing as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
   }
 
-  /* Adjust the input width for smaller screens if necessary */
   #autocomplete-input {
     width: 100%;
   }
@@ -591,8 +600,15 @@ button.save-list-button{
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
-
 }
+
+@media (max-width: 768px) {
+  .input {
+    width: 80%; 
+    margin: 0 auto; 
+  }
+}
+
 
 .autocomplete-suggestions {
   max-height: 150px;
@@ -611,28 +627,28 @@ button.save-list-button{
 .table-list {
   width: 90%;
   color: white;
-  margin-bottom: 10rem; /* Center horizontally */
+  margin-bottom: 10rem;
   margin-top: 20px;
-  text-align: center; /* Center the text within the element */
+  text-align: center;
 }
 
 
 @media (max-width: 768px) {
   .table-list {
-    margin-bottom:20rem;
+    margin-bottom: 20rem;
     width: 90%;
     color: white;
     margin-top: 20px;
     text-align: center;
-  
+
   }
 }
 
 .place-name-on-list,
 .place-action {
-  text-align: center; /* Center the text within the elements */
+  text-align: center;
   font-size: 20px;
-  max-width: 100%; /* Ensure responsiveness */
+  max-width: 100%;
 }
 
 
@@ -675,19 +691,20 @@ button.save-list-button{
 
 .save-list-button:hover {
   background-color: #e76f51;
-  /* Sunset orange on hover */
   color: white;
 }
 
 .buttons-container {
   display: flex;
-  gap: 5px; /* Adjust the gap between buttons as needed */
+  gap: 5px;
+
 }
 
 .save-list-button,
 .link-to-saved-list {
   padding: 10px;
 }
+
 .link-to-saved-list {
   color: #61dafb;
   text-decoration: none;
@@ -710,36 +727,42 @@ LIST PAGE ENDS */
 
 
 
-
-
-
 /* SAVED LIST PAGE STARTS*/
-/* saved.css */
+
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #001732;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .title {
   font-size: 24px;
   margin-bottom: 20px;
+  color: white;
+  font-size: 25px;
+  text-align: left;
+  padding: 0;
+  font: bold;
+  margin-top: 8rem;
+  
 }
+
+
 
 .list-container {
   border: 1px solid rgba(148, 185, 217, 0.8);
-  padding: 20px; 
-  margin-bottom: 10px; 
- color: white;
+  color: white;
   border-radius: 5px;
-  background-color:rgba(148, 185, 217, 0.8);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: rgba(148, 185, 217, 0.8);
+  margin: 10px;
   padding: 10px;
- 
+  width:45rem;
+
 }
 
 .custom-name-input {
@@ -748,7 +771,7 @@ LIST PAGE ENDS */
   margin-bottom: 5px;
   border: 1px solid rgba(148, 185, 217, 0.8);
   border-radius: 3px;
- 
+
 }
 
 
@@ -764,14 +787,11 @@ LIST PAGE ENDS */
 .delete-place-button {
   background-color: #e76f51;
   color: white;
-  border: none;
   border-radius: 3px;
-  padding: 5px 10px;
+  border: none;
+  padding: 8px 12px;
   cursor: pointer;
-  margin-left: 35rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
 }
 
 .delete-place-button:hover {
@@ -779,9 +799,11 @@ LIST PAGE ENDS */
 }
 
 .empty-itinerary {
+  justify-content: center;
   text-align: center;
-  margin-top: 20px;
-  color:white;
+  /* margin-left: 25rem; */
+
+  color: white;
 }
 
 .empty-itinerary h2 {
@@ -799,23 +821,23 @@ LIST PAGE ENDS */
   font-size: 35px;
   margin-bottom: 10px;
   color: white;
-  /* Set a specific text color, like black (#000) */
+  
 }
 
-/* Default styles for the "Go back" button in Saved component */
+
 .Go-back-button-on-saved {
   background-color: orange;
   color: white;
   border: none;
-  padding: 10px 15px;
-  
+  padding: 10px 20px;
+  cursor: pointer;
   font-size: 18px;
   border-radius: 10px;
- 
-  margin-right: 50px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  }
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  
+}
 
 
 
@@ -824,10 +846,27 @@ LIST PAGE ENDS */
   .Go-back-button-on-saved {
     padding: 8px 16px;
     font-size: 16px;
-    top: 62px;
-    /* Adjust the top margin for smaller screens */
+    top: 50px; 
     left: 10px;
-    /* Adjust the left margin for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .list-title-on-saved {
+    text-align: center;
+  }
+
+  .list-container {
+    width: 100%;
+  }
+
+  .delete-place-button {
+    margin-top: 10px;
   }
 }
 
@@ -869,15 +908,16 @@ LIST PAGE ENDS */
 
 .search-title {
   font-size: 26px;
-  margin: 20px auto; /* Center title horizontally */
-  text-align: center; /* Center title text */
+  margin: 20px auto;
+  text-align: center;
+ 
 }
 
 .category-selection {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center category buttons horizontally */
-  margin: 10px auto; /* Center category buttons horizontally */
+  justify-content: center;
+  margin: 10px auto;
 }
 
 .category-button {
@@ -908,18 +948,18 @@ LIST PAGE ENDS */
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  margin: 10px auto; /* Center input horizontally */
+  margin: 10px auto;
   display: block;
 }
 
 .input-on-search {
-  width: 80%; /* Adjust the width to fit the container */
+  width: 80%;
   padding: 10px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
-  margin: 0 auto; /* Center input horizontally */
+  margin: 0 auto;
   display: block;
 }
 
@@ -931,7 +971,7 @@ LIST PAGE ENDS */
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
-  margin: 10px auto; /* Center button horizontally */
+  margin: 10px auto;
   display: block;
 }
 
@@ -943,13 +983,14 @@ LIST PAGE ENDS */
 .selected-categories {
   font-size: 16px;
   margin-bottom: 20px;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
 }
 
 .place-results-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center place results horizontally */
+  justify-content: center;
+
 }
 
 .place-result {
@@ -958,8 +999,11 @@ LIST PAGE ENDS */
   padding: 10px;
   background-color: white;
   border: 1px solid #000;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
+ 
 }
+
+
 
 .place-info {
   padding: 10px;
@@ -967,15 +1011,15 @@ LIST PAGE ENDS */
 }
 
 .place-result img {
-  max-width: 100%; /* Ensure images don't overflow their container */
-  height: auto; /* Maintain image aspect ratio */
+  max-width: 100%;
   border-radius: 5px;
+  max-height: 200px; 
 }
 
 .place-name {
   font-size: 16px;
-  width: 100%; /* Full width on smaller screens */
-  text-align: center; /* Center text horizontally */
+  width: 100%;
+  text-align: center;
 }
 
 .go-back-button-on-placesearch {
@@ -997,16 +1041,13 @@ LIST PAGE ENDS */
     padding: 8px 16px;
     font-size: 16px;
     top: 50px;
-    /* Adjust the top margin for smaller screens */
     left: 10px;
-    /* Adjust the left margin for smaller screens */
   }
 }
 
 
 .go-back-button-on-placesearch:hover {
   background-color: #e76f51;
-  /* Sunset orange on hover */
   color: white;
 }
 
@@ -1015,7 +1056,7 @@ LIST PAGE ENDS */
 @media screen and (max-width: 480px) {
   .search-title {
     font-size: 20px;
-    margin: 10px auto; /* Adjust margins for smaller screens */
+    margin: 10px auto;
   }
 
   .category-selection {
@@ -1038,9 +1079,11 @@ LIST PAGE ENDS */
   .search-button {
     margin: 10px auto;
   }
-
+  @media (max-width: 768px) {
   .place-result {
-    width: calc(50% - 10px); /* Two columns for small screens */
+    width: calc(80% - 40px);
+    
+  }
   }
 
   .place-name {
@@ -1075,4 +1118,41 @@ LIST PAGE ENDS */
   cursor: not-allowed;
 }
 
+.add-to-list-button {
+color: #fff;
+border: none;
+padding: 8px 12px;
+cursor: pointer;
+}
 
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+  
+}
+
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  
+}
+
+.w3-col.m4.l3{
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
