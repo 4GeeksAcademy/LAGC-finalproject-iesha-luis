@@ -25,7 +25,8 @@
     "dotenv": "^16.3.1",
     "firebase-admin": "^11.10.1",
     "firebase-functions": "^4.3.1",
-    "react-google-login": "^5.2.2"
+    "react-google-login": "^5.2.2",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "firebase-functions-test": "^3.1.0"

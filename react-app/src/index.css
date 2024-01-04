@@ -207,6 +207,12 @@ button.login-button {
   margin-left: 0; /* Adjust margin for better spacing */
 }
 
+@media (max-width: 768px) {
+  .sloganss{
+    font-size: 25px;
+  }
+  }
+
 .login-button a {
   text-decoration: none;
   color: black;
@@ -321,7 +327,11 @@ button.login-button {
     padding: 5rem; /* Adjust padding for better spacing */
   }
 }
-
+@media (max-width: 768px) {
+  .blue-block {
+   height: 100%;
+  }
+  }
 
 .exploredetail {
   background-color: white;
